@@ -1,16 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Navbar from './Components/Navbar/Navbar';
+import HomePage from './Components/HomePage/HomePage';
+import PostsGrid from './Components/PostsGrid/PostsGrid';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          IndependienTips
-        </p>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route exact path='/' element={<HomePage/>}/>
+          <Route exact path='/articulos' element={<PostsGrid/>}/>
+          <Route exact path='/' element={<HomePage/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
   );
 }
 
