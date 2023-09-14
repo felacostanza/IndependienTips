@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
     
         <div class="text-center text-light p-3">
-            ©2023 Copyright:
+            ©2023 Copyright IndependienTips
         </div>
         
     </footer>

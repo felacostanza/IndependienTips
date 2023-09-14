@@ -33,6 +33,17 @@ export default function Navbar() {
                             }}
                         >Articulos</NavLink>
                     </li>
+                    <li class="nav-item linkardo">
+                        <NavLink className="nav-link" to = '/crear-blog'
+                            style={({ isActive, isPending }) => {
+                                return {
+                                fontWeight: isActive ? "bold" : "bold",
+                                color: isActive? "black" : "black",
+                                textDecoration: isActive ? "none" : "none",
+                                };
+                            }}
+                        >Crear Post</NavLink>
+                    </li>
                 </ul>
                 <ul className='navbar-nav'>
                     <li className='nav-item mb-2'>
