@@ -1,0 +1,9 @@
+#container-register{
+    height: 100vh;
+}
+
+#register-card{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
