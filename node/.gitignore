@@ -1,6 +1,5 @@
 /node_modules
 /database
-/database/database.js
 
 .DS_Store
 .env
