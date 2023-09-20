@@ -1,12 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import axios from "axios";
 
 export default function PostsGrid() {
+
+    const [blogs, setBlogs] = useState([]);
+
+    const cat = useLocation().search;
+
+    useEffect(() => {
+        const fetch = async () => {
+            try{
+                const res = await axios.get(`/posts${cat}`);
+                setBlogs(res.data);
+            }catch(err){
+                console.log(err);
+            }
+        }
+        fetch();
+    }, [cat])
+
   return (
     <div className="container">
-
         <div className="row mt-5">
-
             <div className="col-lg-6">  
                 <div className="card mb-4">
                     <div className="card-header">Buscar</div>
@@ -41,19 +57,23 @@ export default function PostsGrid() {
             </div>
 
         <div className='row'>
-            <div className="col-lg-6">   
-                <div className="card mb-4">
-                    <a href="#!"><img className="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                    <div className="card-body">
-                        <div className="small text-muted">January 1, 2023</div>
-                            <h2 className="card-title h4">Post Title</h2>
-                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                            <a className="btn btn-primary" href="#!">Read more →</a>
-                        </div>
+            {
+                blogs.map((blog, index) => (
+                    <div className="col-lg-6" key={index}>   
+                        <div className="card mb-4">
+                            <Link to={`/ver-blog/${blog.id}`}><img class="card-img-top" src={`../upload/${blog.img}`} alt="..."/></Link>
+                            <div className="card-body">
+                                <h2 className="card-title h4">{blog.titulo}</h2>
+                                <p className="card-text">{blog.desc}</p>
+                                <p className='card-text'>{blog.date}</p>
+                                <Link to={`/ver-blog/${blog.id}`}><button className='btn btn-secondary'>Ver blog</button></Link>
+                            </div>
+                        </div>  
                     </div>
-                </div>  
-            </div>
+                ))
+            }
         </div>  
     </div> 
+    </div>
   )
 }

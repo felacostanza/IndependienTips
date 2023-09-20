@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <nav class="navbar navbar-expand-md">
-            <div class="container-fluid">
+            <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
