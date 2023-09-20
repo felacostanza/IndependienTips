@@ -7,6 +7,7 @@ import CrearPost from './Components/CrearPost/CrearPost'
 import Footer from './Components/Footer/Footer';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
+import VerBlog from './Components/VerBlog/VerBlog';
 import { AuthContextProvider } from './Context/AuthContext';
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
         <Navbar/>
           <Routes>
             <Route exact path='/' element={<HomePage/>}/>
-            <Route exact path='/articulos' element={<PostsGrid/>}/>
-            <Route exact path='/crear-blog' element={<CrearPost/>}/>
-            <Route exact path='/register' element={<Register/>}/>
-            <Route exact path='/login' element={<Login/>}/>
+            <Route exact path='/articulos/' element={<PostsGrid/>}/>
+            <Route exact path='/ver-blog/:id' element={<VerBlog/>}/>
+            <Route exact path='/crear-blog/' element={<CrearPost/>}/>
+            <Route exact path='/register/' element={<Register/>}/>
+            <Route exact path='/login/' element={<Login/>}/>
           </Routes>
           <Footer/>
         </AuthContextProvider>

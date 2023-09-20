@@ -1,13 +1,16 @@
-/*
+#container-blog{
+    background-color: #cae9ff;
+}
+
 .ql-container {
-    
+    /*
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
-    
+    */
     background: #fefcfc;
 }
   
-  
+  /* Snow Theme */
 .ql-snow.ql-toolbar {
     display: block;
     background: #eaecec;
@@ -16,10 +19,9 @@
 }
   
 .ql-editor {
-    min-height: 18em;
+    min-height: 200px;
 }
 
 #exampleFormControlTextarea1{
     resize: none;
 }
-*/

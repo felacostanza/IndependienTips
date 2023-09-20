@@ -44,7 +44,7 @@ export default function Login() {
                         <span className="input-group-text" id="basic-addon1">Contraseña</span>
                         <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name='password' onChange={handleChange} required/>
                     </div>
-                    <button className='btn btn-primary' onClick={handleSubmit}>Registrarse</button>
+                    <button className='btn btn-primary' onClick={handleSubmit}>Iniciar sesión</button>
                     {error && <p>{error}</p>}
                 </div>
             </div>
