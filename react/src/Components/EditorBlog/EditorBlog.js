@@ -1,3 +1,4 @@
+/*
 import { useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
 import BlotFormatter from 'quill-blot-formatter';
@@ -90,4 +91,4 @@ const EditorBlog = () => {
   );
 };
 
-export default EditorBlog;
+export default EditorBlog;*/

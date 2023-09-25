@@ -13,7 +13,6 @@ export default function CrearPost() {
         modules: { 
             toolbar: {
                 container: [
-                  [{ font: [] }],
                   [{ header: [1, 2, 3, 4, 5, 6, false] }],
                   ["bold", "italic", "underline", "strike"],
                   [{ color: [] }, { background: [] }],

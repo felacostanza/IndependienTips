@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import axios from "axios";
+import './PostsGrid.css'
+import moment from 'moment';
 
 export default function PostsGrid() {
 
@@ -41,7 +43,7 @@ export default function PostsGrid() {
                         <div className="row">
                             <div className="col-sm-6">
                                 <ul className="list-unstyled mb-0">
-                                    <li><Link to='/articulos?cat=cocina'>Cocina</Link></li>
+                                    <li><Link to='/articulos?cat=comida'>Cocina</Link></li>
                                     <li><Link to='/articulos?cat=tecnologia'>Tecnología</Link></li>
                                 </ul>
                             </div>
@@ -56,23 +58,23 @@ export default function PostsGrid() {
                 </div>
             </div>
 
-        <div className='row'>
+        
             {
                 blogs.map((blog, index) => (
-                    <div className="col-lg-6" key={index}>   
-                        <div className="card mb-4">
-                            <Link to={`/ver-blog/${blog.id}`}><img class="card-img-top" src={`../upload/${blog.img}`} alt="..."/></Link>
+                    <div className="col-lg-4 mb-4" key={index}>   
+                        <div className="card h-100">
+                            <Link to={`/ver-blog/${blog.id}`}><img className="card-img-top img-size" src={`../upload/${blog.img}`} alt="..."/></Link>
                             <div className="card-body">
                                 <h2 className="card-title h4">{blog.titulo}</h2>
                                 <p className="card-text">{blog.desc}</p>
-                                <p className='card-text'>{blog.date}</p>
+                                <p className='card-text'>{moment(blog.date).fromNow()}</p>
                                 <Link to={`/ver-blog/${blog.id}`}><button className='btn btn-secondary'>Ver blog</button></Link>
                             </div>
                         </div>  
                     </div>
                 ))
             }
-        </div>  
+         
     </div> 
     </div>
   )

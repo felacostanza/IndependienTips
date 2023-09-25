@@ -2,9 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useQuill } from 'react-quilljs';
-import BlotFormatter from 'quill-blot-formatter';
 import 'quill/dist/quill.snow.css';
 import moment from 'moment';
+import Comment from '../Comment/Comment';
+import CommentGrid from '../CommentGrid/CommentGrid';
 
 export default function VerBlog() {
 
@@ -14,14 +15,8 @@ export default function VerBlog() {
         readOnly: true,
         modules: { 
             toolbar: false,
-            blotFormatter: {} 
         }
     });
-    
-    if (Quill && !quill) {
-        //const BlotFormatter = require('quill-blot-formatter');
-        Quill.register('modules/blotFormatter', BlotFormatter);
-    }
 
     const params = useParams();
 
@@ -58,7 +53,7 @@ export default function VerBlog() {
 
             {
                 blog.userImg &&
-                <img src={blog.userImg}/>
+                <img src={blog.userImg} alt='user-img'/>
             }
 
             <div className='row'>
@@ -68,6 +63,12 @@ export default function VerBlog() {
               
             <div ref={quillRef} />
     
+            <hr/>
+
+            <Comment postId={params.id}/>
+
+            <CommentGrid postId={params.id}/>
+
         </div>
     )
 }

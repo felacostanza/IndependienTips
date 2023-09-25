@@ -42,13 +42,24 @@ export default function Navbar() {
                         usuario ? 
                         (
                             <ul className='navbar-nav'>
-                                <li class="nav-item">
-                                    <Link className="nav-link" to = '/crear-blog'><button className='btn btn-success'>Crear Blog</button></Link>
-                                </li>
-                                <li className='nav-item'>
-                                    <a className='nav-link'><button className='btn btn-danger' onClick={logout}>Cerrar sesion</button></a>
+                                <li class="nav-item dropdown">
+                                    <button class="nav-link dropdown-toggle btn btn-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <b>Mi perfil</b>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><Link className='dropdown-item'>Editar perfil</Link></li>
+                                        <li><hr class="dropdown-divider"/></li>
+                                        <li class="nav-item">
+                                            <Link className="nav-link" to = '/crear-blog'><button className='btn btn-success'>Crear Blog</button></Link>
+                                        </li>
+                                        <li><Link class="dropdown-item" to='/mi-perfil/mis-blogs'>Mis blogs</Link></li>
+                                        <li><Link class="dropdown-item" to="/mi-perfil/mis-comments">Mis comentarios</Link></li>
+                                        <li><hr class="dropdown-divider"/></li>
+                                        <li><a className='nav-link'><button className='btn btn-danger' onClick={logout}>Cerrar sesion</button></a></li>
+                                    </ul>
                                 </li>
                             </ul>
+                            
                         )
                         :
                         (
