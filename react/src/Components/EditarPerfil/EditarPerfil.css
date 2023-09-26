@@ -1,0 +1,6 @@
+.img-lol{
+    width: 250px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 250px;
+}

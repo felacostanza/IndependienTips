@@ -49,7 +49,7 @@ export default function MisPosts() {
                                 <div class="card">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                        <img src={`../upload/${blog.img}`} class="img-fluid rounded-start imagen" alt="..."/>
+                                        <img src={`../upload/${blog.img}`} class=" rounded-start imagen" alt="..."/>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">

@@ -47,7 +47,7 @@ export default function Navbar() {
                                         <b>Mi perfil</b>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><Link className='dropdown-item'>Editar perfil</Link></li>
+                                        <li><Link className='dropdown-item' to='/editar-perfil'>Editar perfil</Link></li>
                                         <li><hr class="dropdown-divider"/></li>
                                         <li class="nav-item">
                                             <Link className="nav-link" to = '/crear-blog'><button className='btn btn-success'>Crear Blog</button></Link>

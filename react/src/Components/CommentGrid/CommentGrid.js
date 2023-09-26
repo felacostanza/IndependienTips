@@ -34,6 +34,7 @@ export default function CommentGrid({postId}) {
                     }
 
                     <div className='row'>
+                        {c.img && <img src={c.img}/>}
                         <span><b>{c.username}</b></span>
                         <p>{c.content}</p>
                     </div>

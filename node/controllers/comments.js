@@ -3,7 +3,7 @@ import { db } from "../Database/database.js";
 import jwt from "jsonwebtoken";
 
 export function getPostComments(req, res){
-    const query = "SELECT `username`, `content` FROM users u JOIN comments c ON u.id = c.user_id WHERE c.post_id = ?"
+    const query = "SELECT `username`, `img`, `content` FROM users u JOIN comments c ON u.id = c.user_id WHERE c.post_id = ?"
 
     db.query(query, [req.params.id], (err, info) => {
         if(err) return res.json(err);

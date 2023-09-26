@@ -13,6 +13,7 @@ import { AuthContextProvider } from './Context/AuthContext';
 import MisPosts from './Components/MisPosts/MisPosts';
 import MisComments from './Components/MisComments/MisComments';
 import EditarComment from './Components/EditarComment/EditarComment';
+import EditarPerfil from './Components/EditarPerfil/EditarPerfil';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path='/ver-blog/:id' element={<VerBlog/>}/>
             <Route exact path='/mi-perfil/mis-blogs' element={<MisPosts/>}/>
             <Route exact path='/mi-perfil/mis-comments' element={<MisComments/>}/>
+            <Route exact path='/editar-perfil' element={<EditarPerfil/>}/>
             <Route exact path='/editar-blog/:id' element={<EditarPost/>}/>
             <Route exact path='/editar-comentario/:id' element={<EditarComment/>}/>
             <Route exact path='/crear-blog/' element={<CrearPost/>}/>
