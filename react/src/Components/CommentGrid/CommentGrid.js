@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import './CommentGrid.css'
 
 export default function CommentGrid({postId}) {
 
@@ -27,16 +28,18 @@ export default function CommentGrid({postId}) {
         {
             comments.map((c, index) => (
                 <div className='row'>
-                    <div className='col-6'>
+                    <div className='col-lg-6'>
                     {
                         c.userImg &&
                         <img src={c.userImg} alt='user-img'/>
                     }
 
                     <div className='row'>
-                        {c.img && <img src={c.img}/>}
-                        <span><b>{c.username}</b></span>
-                        <p>{c.content}</p>
+                        <div>
+                        {c.img && <img src={c.img} className='prof-img-comment'/>}
+                        <span className='mx-3 name'><b>{c.username}</b></span>
+                        </div>
+                        <p id='single-comment' className='my-3'>{c.content}</p>
                     </div>
 
                     </div>

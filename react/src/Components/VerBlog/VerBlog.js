@@ -6,6 +6,7 @@ import 'quill/dist/quill.snow.css';
 import moment from 'moment';
 import Comment from '../Comment/Comment';
 import CommentGrid from '../CommentGrid/CommentGrid';
+import './VerBlog.css'
 
 export default function VerBlog() {
 
@@ -38,34 +39,43 @@ export default function VerBlog() {
     return (
         <div className='container'>
 
-            <h1 className='mt-3'>{blog.titulo}</h1>
+        <div className='col-lg-9'>
 
-            {
-                blog.img &&
-                <div class="mb-3">
-                    <img src={`../upload/${blog.img}`} alt='foto-blog' className='card-img-top'/>
+                <div className='col-9'>
+                    <h1 className='my-3 titulo'>{blog.titulo}</h1>
                 </div>
-            }
 
-            <div class="mb-3">
-                <h4 className='mt-3'>{blog.desc}</h4>
-            </div>
+                <div className='mb-3'>
+                {
+                    blog.userImg &&
+                    <img src={blog.userImg} alt='user-img' className='prof-img'/>
+                }
+                    <span className='mx-3 name'><b>{blog.username}, </b></span>
+                    <span>{moment(blog.date).fromNow()}</span>
+                    
+                </div>
 
-            {
-                blog.userImg &&
-                <img src={blog.userImg} alt='user-img'/>
-            }
+                {
+                    blog.img &&
+                    <div class="mb-3">
+                        <img src={`../upload/${blog.img}`} alt='foto-blog' className='card-img-top rounded blog-img'/>
+                    </div>
+                }
 
-            <div className='row'>
-                <span><b>{blog.username}</b></span>
-                <p>{moment(blog.date).fromNow()}</p>
-            </div>
-              
-            <div ref={quillRef} />
-    
-            <hr/>
+                <div class="mb-3">
+                    <h4 className='mt-3 desc'>{blog.desc}</h4>
+                </div>
+
+                
+                <div ref={quillRef}/>
+        
+                <hr/>
+
+            </div>    
 
             <Comment postId={params.id}/>
+
+            <hr/>
 
             <CommentGrid postId={params.id}/>
 

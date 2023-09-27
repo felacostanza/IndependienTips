@@ -1,5 +1,5 @@
 import { json } from "express";
-import { db } from "../Database/database.js";
+import { db } from "../database/database.js";
 import jwt from "jsonwebtoken";
 
 export function getPostComments(req, res){
@@ -45,7 +45,7 @@ export function getEditComment(req, res){
         db.query(query, [req.params.id], (err, info) => {
             if(err) return res.json(err);
 
-            return res.status(200).json(info);
+            return res.status(200).json(info[0]);
         })
         
     })

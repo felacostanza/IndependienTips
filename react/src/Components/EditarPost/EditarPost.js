@@ -116,7 +116,7 @@ export default function EditarPost() {
     <div id='container-blog'>
         <div className='container'>
             <div className='row justify-content-center'>
-                <div className='col-8'>
+                <div className='col-lg-8'>
 
                     <div className='container'>
                 

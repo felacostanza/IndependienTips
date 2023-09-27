@@ -38,17 +38,22 @@ export default function MisComments() {
 
     return (
       <div className='container'>
+        <div className='row'>
         {
           misComentarios.map((c, index) => (
-            <div className='row'>
-              <div className='col-8'>
-                  <p>{c.content} en la publicacion <b>{c.titulo}</b></p>
-                  <Link to={`/editar-comentario/${c.id}`}><button className='btn btn-warning'>Editar comentario</button></Link>
-                  <button className='btn btn-danger mx-3' onClick={() => handleDelete(c.id)}>Borrar comentario</button>
-              </div>
+      
+            <div className="col-lg-4 col-md-6 my-4" key={index}>   
+              <div className="card h-100">
+                  <div className="card-body">
+                      <h2 className="card-title h4">"{c.content}" en la publicacion <b>{c.titulo}</b></h2>
+                      <Link to={`/editar-comentario/${c.id}`}><button className='btn btn-warning'>Editar comentario</button></Link>
+                      <button className='btn btn-danger mx-2' onClick={() => handleDelete(c.id)}>Borrar comentario</button>
+                  </div>
+              </div>  
             </div>
           ))
         }
+        </div>
       </div>
     )
 }

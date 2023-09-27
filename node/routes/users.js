@@ -1,8 +1,9 @@
 import express from "express"
-import { updateImg } from "../controllers/users.js";
+import { updateData, updateImg } from "../controllers/users.js";
 
 const router = express.Router();
 
-router.put('/img', updateImg)
+router.put('/img', updateImg);
+router.put('/data', updateData);
 
 export default router

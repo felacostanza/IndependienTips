@@ -45,7 +45,7 @@ export default function MisPosts() {
                 !error ? (
                     myPosts.map((blog, index) => (
                         <div className='row h-100'>
-                            <div className='col-8 my-3 '>
+                            <div className='col-lg-10 my-3 '>
                                 <div class="card">
                                     <div class="row g-0">
                                         <div class="col-md-4">

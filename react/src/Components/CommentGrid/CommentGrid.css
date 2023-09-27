@@ -1,0 +1,12 @@
+.prof-img-comment{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#single-comment{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}

@@ -14,7 +14,8 @@ export default function EditarComment() {
             try{
                 const res = await axios.get(`/comments/edit/${params.id}`);
                 console.log(res);
-                setContent(res.data.content);
+                setContent(res.data);
+                console.log(content);
             }catch(err){
                 console.log(err);
             }
@@ -38,7 +39,7 @@ export default function EditarComment() {
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-6'>
-                <textarea class="form-control my-3" id="exampleFormControlTextarea1" rows="3" value={content} onChange={(e) => setContent(e.target.value)} required></textarea>
+                <textarea class="form-control my-3" id="exampleFormControlTextarea1" rows="3" value={content.content} onChange={(e) => setContent(e.target.value)} required></textarea>
                 <button className='btn btn-primary' onClick={handleSubmit}>Enviar comentario</button>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { db } from "../Database/database.js";
+import { db } from "../database/database.js";
 import jwt from "jsonwebtoken";
 
 export const getAllBlogs = (req, res) => {
