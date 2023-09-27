@@ -69,7 +69,7 @@ export default function VerBlog() {
                 
                 <div ref={quillRef}/>
         
-                <hr/>
+                
 
             </div>    
 

@@ -33,7 +33,7 @@ export default function Register() {
     return (
         <div className='container-fluid'>
             <div className='row justify-content-center d-flex align-items-center' id='container-register'>
-                <div className='col-4 text-center' id='register-card'>
+                <div className='col-xl-4 col-lg-6 col-md-6 col-sm-10 text-center' id='register-card'>
                     <h2 className='mb-3'>Registro</h2>
                     <div className="input-group mb-3">
                         <span className="input-group-text">Nombre de usuario</span>

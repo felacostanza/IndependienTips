@@ -12,6 +12,7 @@ export default function EditarPerfil() {
     const [src, setSrc] = useState();
     const [preview, setPreview] = useState();
     const [msg, setMsg] = useState();
+    const [res, setRes] = useState();
 
     const [values, setValues] = useState({
         username: usuario.username,
@@ -51,6 +52,7 @@ export default function EditarPerfil() {
         try{
             const res = await axios.put('/users/data', values);
             console.log(res);
+            setRes(res.data);
         } catch (err){
             console.log(err);
         }
@@ -75,14 +77,14 @@ export default function EditarPerfil() {
                         src={src}
                     />
                 </div>
+                <div className='col-2 text-center'><button className='btn btn-primary mt-5' onClick={handleImg}>Cambiar foto</button></div>
                 {msg && <p className='text-center my-3'>{msg}</p>}
-                <div className='col-2 text-center'><button className='btn btn-primary mt-2' onClick={handleImg}>Cambiar foto</button></div>
             </div>
 
             <div className='row my-4 justify-content-center'>
                 <h1>Editar datos</h1>
                 <hr/>
-                <div className='col-6 text-center my-3'>
+                <div className='col-lg-6 text-center my-3'>
                     <div className="input-group mb-3">
                         <span className="input-group-text">Nombre de usuario</span>
                         <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" name='username' value={values.username} onChange={handleChange}/>
@@ -99,6 +101,7 @@ export default function EditarPerfil() {
                         </div>
                     </div>
                 </div>
+                {res && <p className='text-center'>{res}</p>}
                 <div className='row justify-content-center'>
                     <div className='col-2 text-center'><button className='btn btn-primary mt-2' onClick={handleSubmit}>Cambiar datos</button></div>
                 </div>

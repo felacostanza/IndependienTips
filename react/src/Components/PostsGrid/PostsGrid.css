@@ -3,3 +3,7 @@
     height: 300px;
     object-fit: cover;
 }
+
+.no-hay{
+    height: 50vh;
+}

@@ -25,18 +25,7 @@ export default function PostsGrid() {
   return (
     <div className="container">
         <div className="row mt-5">
-            <div className="col-lg-6">  
-                <div className="card mb-4">
-                    <div className="card-header">Buscar</div>
-                    <div className="card-body">
-                        <div className="input-group">
-                            <input className="form-control" type="text" placeholder="Ingresar título" aria-label="Enter search term..." aria-describedby="button-search" />
-                            <button className="btn btn-primary" id="button-search" type="button">Buscar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='col-lg-6'>
+            <div className='col-lg-9'>
                 <div className="card mb-4">
                     <div className="card-header">Categorias</div>
                     <div className="card-body">
@@ -57,8 +46,13 @@ export default function PostsGrid() {
                     </div>
                 </div>
             </div>
+        </div> 
 
+        <div className='row mt-3'>
         
+        {
+            blogs.length !== 0 ?
+            <>
             {
                 blogs.map((blog, index) => (
                     <div className="col-lg-4 mb-4" key={index}>   
@@ -74,8 +68,16 @@ export default function PostsGrid() {
                     </div>
                 ))
             }
+            </>
+            :
+            <div className='row justify-content-center d-flex align-items-center no-hay'>
+                <h1 className='text-center'>No hay blogs</h1>
+            </div>
+
+        }
+            
          
-    </div> 
+        </div>
     </div>
   )
 }

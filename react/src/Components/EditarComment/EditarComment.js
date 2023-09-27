@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import './EditarComment.css'
 
 export default function EditarComment() {
 
@@ -14,7 +15,7 @@ export default function EditarComment() {
             try{
                 const res = await axios.get(`/comments/edit/${params.id}`);
                 console.log(res);
-                setContent(res.data);
+                setContent(res.data.content);
                 console.log(content);
             }catch(err){
                 console.log(err);
@@ -35,12 +36,17 @@ export default function EditarComment() {
         }
     }
 
+    console.log(content)
+
   return (
     <div className='container'>
-        <div className='row justify-content-center'>
-            <div className='col-6'>
-                <textarea class="form-control my-3" id="exampleFormControlTextarea1" rows="3" value={content.content} onChange={(e) => setContent(e.target.value)} required></textarea>
-                <button className='btn btn-primary' onClick={handleSubmit}>Enviar comentario</button>
+        <div className='row justify-content-center d-flex align-items-center' id='container-comment'>
+            <div className='col-8'>
+                <h1 className='text-center'>Editar comentario</h1>
+                <div id='card-comment'>
+                    <textarea class="form-control my-3" id="exampleFormControlTextarea1" rows="3" value={content} onChange={(e) => setContent(e.target.value)} required></textarea>
+                    <button className='btn btn-primary' onClick={handleSubmit}>Enviar comentario</button>
+                </div>
             </div>
         </div>
     </div>

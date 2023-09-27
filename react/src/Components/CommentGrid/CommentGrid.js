@@ -28,6 +28,7 @@ export default function CommentGrid({postId}) {
         {
             comments.map((c, index) => (
                 <div className='row'>
+                    <h4 className='my-3'>Comentarios de la publicación</h4>
                     <div className='col-lg-6'>
                     {
                         c.userImg &&

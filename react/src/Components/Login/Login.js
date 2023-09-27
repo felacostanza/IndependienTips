@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
+import './Login.css'
 
 export default function Login() {
      
@@ -34,7 +35,7 @@ export default function Login() {
     return (
         <div className='container-fluid'>
             <div className='row justify-content-center d-flex align-items-center' id='container-login'>
-                <div className='col-4 text-center' id='register-card'>
+                <div className='col-xl-4 col-lg-6 col-md-6 col-sm-10 text-center' id='login-card'>
                     <h2 className='mb-3'>Iniciar Sesión</h2>
                     <div className="input-group mb-3">
                         <span className="input-group-text">Nombre de usuario</span>
