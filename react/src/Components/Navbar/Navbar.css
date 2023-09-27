@@ -1,0 +1,54 @@
+.navbar {
+    background-color: #20A4F3;
+}
+
+#inicio-sesion{
+    outline: 1px solid white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background-color: #20A4F3;
+    color: white;
+    transition: .5s;
+    margin-left: 10px;
+}
+
+#inicio-sesion:hover{
+    background-color: white;
+    color: #20A4F3;
+    outline: none;
+    font-size: 20px;
+}
+
+#registro{
+    background-color: white;
+    color: #20A4F3;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: .5s;
+    border: none;
+    margin-left: 10px;
+}
+
+#registro:hover{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.linkardo{
+    padding: 10px 20px;
+    height: 100%;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.nav-item{
+    font-size: 20px;
+    transition: .5s;
+    color: whitesmoke;
+}
+
+.linkardo:hover{
+    font-size: 25px;
+}

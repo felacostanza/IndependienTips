@@ -1,0 +1,9 @@
+#container-login{
+    height: 90vh;
+}
+
+#login-card{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}

@@ -1,0 +1,9 @@
+#container-comment{
+    height: 90vh;
+}
+
+#card-comment{
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 20px;
+}
