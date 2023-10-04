@@ -57,7 +57,7 @@ export default function PostsGrid() {
                 blogs.map((blog, index) => (
                     <div className="col-lg-4 mb-4" key={index}>   
                         <div className="card h-100">
-                            <Link to={`/ver-blog/${blog.id}`}><img className="card-img-top img-size" src={`../upload/${blog.img}`} alt="..."/></Link>
+                            <Link to={`/ver-blog/${blog.id}`}><img className="card-img-top img-size" src={blog.img} alt="..."/></Link>
                             <div className="card-body">
                                 <h2 className="card-title h4">{blog.titulo}</h2>
                                 <p className="card-text">{blog.desc}</p>

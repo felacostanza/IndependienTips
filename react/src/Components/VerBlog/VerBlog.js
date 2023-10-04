@@ -58,7 +58,7 @@ export default function VerBlog() {
                 {
                     blog.img &&
                     <div class="mb-3">
-                        <img src={`../upload/${blog.img}`} alt='foto-blog' className='card-img-top rounded blog-img'/>
+                        <img src={blog.img} alt='foto-blog' className='card-img-top rounded blog-img'/>
                     </div>
                 }
 

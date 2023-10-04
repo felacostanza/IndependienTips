@@ -1,10 +1,12 @@
 import mysql from "mysql2"
+import { HOST, USER, PASSWORD, DATABASE, PORT} from "../config/config.js";
 
 export const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "independientips"
+    host: HOST,
+    user: USER,
+    password: PASSWORD,
+    database: DATABASE,
+    port: PORT
 })
 
 db.connect((err) => {

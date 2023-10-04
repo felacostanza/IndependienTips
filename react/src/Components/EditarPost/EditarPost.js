@@ -38,6 +38,7 @@ export default function EditarPost() {
     });
     
     const [blog, setBlog] = useState();
+    const [img, setImg] = useState();
     const [titulo, setTitulo] = useState();
     const [desc, setDesc] = useState();
     const [file, setFile] = useState();
@@ -75,29 +76,29 @@ export default function EditarPost() {
         }
     }, [quill]);
 
-    
-    const upload = async () => {
-        try{
-            const formInfo = new FormData();
-            formInfo.append("file", file)
-            const res = await axios.post('/upload', formInfo)
-            return res.data;
-        }catch(err){
-            console.log(err);
-        }
+
+    const handleImageChange = (e) => {
+        const data = new FileReader();
+        data.addEventListener('load', () => {
+            setImg(data.result)
+        })
+        data.readAsDataURL(e.target.files[0]);
     }
+
+    console.log(img);
+
+    
 
     const handleSubmit = async (e) => {
 
         e.preventDefault();
         
-        const imgUrl = await upload();
 
         try{
             const res = await axios.put(`/posts/${params.id}`, {
                 titulo: titulo, 
                 desc: desc, 
-                img: file ? imgUrl : "", 
+                img: img, 
                 cat: cat,
                 content: content, 
                 date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
@@ -131,8 +132,15 @@ export default function EditarPost() {
 
                         <div className="mb-3">
                             <h4 className='mt-3'>Imagen</h4>
-                            <input className="form-control" type="file" id="formFile" onChange={(e) => setFile(e.target.files[0])} required/>
+                            <input className="form-control" type="file" id="formFile" onChange={(e) => handleImageChange(e)} required/>
                         </div>
+                        
+                        {
+                        img &&
+                        <div class="mb-3">
+                            <img src={img} alt='preview' className='blog-img card-img-top rounded'/>
+                        </div>
+                        }
                         
                         <div className="mb-3">
                             <h4 className='mt-3'>Descripción</h4>
