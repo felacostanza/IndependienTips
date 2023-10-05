@@ -15,7 +15,16 @@ export const AuthContextProvider = ({children}) => {
     }
 
     const logout = async (values) => {
-        const res = await axios.post("https://independientips-api.onrender.com/api/auth/logout");
+        const res = await axios.post("https://independientips-api.onrender.com/api/auth/logout", null, {
+            withCredentials: true,
+            crossDomain: true,
+            headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+                'https://independientips.netlify.app',
+            },
+        });
         console.log(res);
         setUsuario(null);
         navigate('/');
