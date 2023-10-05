@@ -10,30 +10,12 @@ export const AuthContextProvider = ({children}) => {
     const navigate = useNavigate();
 
     const login = async (values) => {
-        const res = await axios.post("https://independientips-api.onrender.com/api/auth/login", values,{
-            withCredentials: true,
-            crossDomain: true,
-            headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            'Access-Control-Allow-Origin':
-                'https://independientips.netlify.app',
-            },
-        });
+        const res = await axios.post("https://independientips-api.onrender.com/api/auth/login", values);
         setUsuario(res.data);
     }
 
     const logout = async (values) => {
-        const res = await axios.post("https://independientips-api.onrender.com/api/auth/logout", null, {
-            withCredentials: true,
-            crossDomain: true,
-            headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            'Access-Control-Allow-Origin':
-                'https://independientips.netlify.app',
-            },
-        });
+        const res = await axios.post("https://independientips-api.onrender.com/api/auth/logout");
         console.log(res);
         setUsuario(null);
         navigate('/');
