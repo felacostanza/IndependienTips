@@ -17,7 +17,7 @@ export default function MisPosts() {
     useEffect(() => {
         const fetchPosts = async () => {
             try{
-                const res = await axios.get(`/posts/mis-posts/${usuario.id}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/posts/mis-posts/${usuario.id}`);
                 setMyPosts(res.data);
             }catch(err){
                 console.log(err)
@@ -31,7 +31,7 @@ export default function MisPosts() {
 
     const handleDelete = async (id) => {
         try{    
-            await axios.delete(`/posts/${id}`);
+            await axios.delete(`https://independientips-api.onrender.com/api/posts/${id}`);
             navigate('/');
         }catch(err){
             console.log(err)

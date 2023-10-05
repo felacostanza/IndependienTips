@@ -15,7 +15,7 @@ export default function MisComments() {
     useEffect(() => {
       const fetchMyComments = async () => {
         try{
-          const res = await axios.get(`/comments/mis-comments/${usuario.id}`);
+          const res = await axios.get(`https://independientips-api.onrender.com/api/comments/mis-comments/${usuario.id}`);
           setMisComentarios(res.data);
         }catch(err){
           console.log(err);
@@ -30,7 +30,7 @@ export default function MisComments() {
 
     const handleDelete = async (id) => {
       try{ 
-        const res = await axios.delete(`/comments/${id}`);
+        const res = await axios.delete(`https://independientips-api.onrender.com/api/comments/${id}`);
         console.log(res);
         navigate('/');
       }catch(err){

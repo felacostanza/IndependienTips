@@ -13,7 +13,7 @@ export default function EditarComment() {
     useEffect(() => {
         const fetch = async () => {
             try{
-                const res = await axios.get(`/comments/edit/${params.id}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/comments/edit/${params.id}`);
                 console.log(res);
                 setContent(res.data.content);
                 console.log(content);
@@ -26,7 +26,7 @@ export default function EditarComment() {
 
     const handleSubmit = async () => {
         try{
-            const res = await axios.put(`/comments/${params.id}`, {
+            const res = await axios.put(`https://independientips-api.onrender.com/api/comments/${params.id}`, {
                 content: content
             })
             console.log(res);

@@ -24,7 +24,7 @@ export default function VerBlog() {
     useEffect(() => {
         const fetch = async () => {
             try{
-                const res = await axios.get(`/posts/${params.id}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/posts/${params.id}`);
                 setBlog(res.data);
                 quill.setContents(JSON.parse(blog.content));
                 

@@ -14,7 +14,7 @@ export default function Comment({postId}) {
 
     const handleSubmit = async () => {
         try{
-            await axios.post(`/comments/${postId}`, {
+            await axios.post(`https://independientips-api.onrender.com/api/comments/${postId}`, {
                 content: comment,
                 post_id: postId
             });

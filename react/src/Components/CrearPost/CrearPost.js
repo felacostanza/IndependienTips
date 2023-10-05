@@ -75,7 +75,7 @@ export default function CrearPost() {
         
 
         try{
-            await axios.post('/posts', {
+            await axios.post('https://independientips-api.onrender.com/api/posts', {
                 titulo: titulo, 
                 desc: desc, 
                 img: img, 

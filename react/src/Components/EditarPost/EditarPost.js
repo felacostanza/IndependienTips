@@ -51,7 +51,7 @@ export default function EditarPost() {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const res = await axios.get(`/posts/${params.id}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/posts/${params.id}`);
                 console.log(res);
                 console.log(res.data);
                 setTitulo(res.data.titulo);
@@ -95,7 +95,7 @@ export default function EditarPost() {
         
 
         try{
-            const res = await axios.put(`/posts/${params.id}`, {
+            const res = await axios.put(`https://independientips-api.onrender.com/api/posts/${params.id}`, {
                 titulo: titulo, 
                 desc: desc, 
                 img: img, 

@@ -13,7 +13,7 @@ export default function PostsGrid() {
     useEffect(() => {
         const fetch = async () => {
             try{
-                const res = await axios.get(`/posts${cat}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/posts${cat}`);
                 setBlogs(res.data);
             }catch(err){
                 console.log(err);

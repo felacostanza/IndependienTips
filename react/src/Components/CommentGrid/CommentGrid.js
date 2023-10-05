@@ -10,7 +10,7 @@ export default function CommentGrid({postId}) {
 
         const fetchComments = async () => {
             try{
-                const res = await axios.get(`/comments/${postId}`);
+                const res = await axios.get(`https://independientips-api.onrender.com/api/comments/${postId}`);
                 console.log(res);
                 setComments(res.data);
                 console.log(comments)

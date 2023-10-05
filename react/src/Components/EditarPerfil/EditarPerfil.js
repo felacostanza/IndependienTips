@@ -38,7 +38,7 @@ export default function EditarPerfil() {
 
     const handleImg = async () => {
         try{
-            const res = await axios.put('/users/img', {
+            const res = await axios.put('https://independientips-api.onrender.com/api/users/img', {
                 img: preview
             })
             console.log(res);
@@ -50,7 +50,7 @@ export default function EditarPerfil() {
 
     const handleSubmit = async () => {
         try{
-            const res = await axios.put('/users/data', values);
+            const res = await axios.put('https://independientips-api.onrender.com/api/users/data', values);
             console.log(res);
             setRes(res.data);
         } catch (err){
