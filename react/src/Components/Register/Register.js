@@ -21,7 +21,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const res = await axios.post("/auth/register", values);
+            const res = await axios.post("https://independientips-api.onrender.com/api/auth/register", values);
             console.log(res);
             navigate('/login')
         } catch (err) {
