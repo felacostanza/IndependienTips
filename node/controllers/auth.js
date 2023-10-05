@@ -46,7 +46,7 @@ export function login(req, res){
         const {password, ...otros} = info[0];
 
         res.cookie("token", token, {
-            httpOnly: true
+
         }).status(200).json(otros);
     })
 
