@@ -33,11 +33,11 @@ app.use(cors(
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "DELETE"],
-      allowedHeaders: [
+      /*allowedHeaders: [
         'Access-Control-Allow-Origin',
         'Content-Type',
         'Authorization'
-      ]
+      ]*/
     }
   ));
 app.use(cookieParser());
