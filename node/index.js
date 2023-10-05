@@ -26,7 +26,7 @@ app.post('/api/upload', upload.single("file"), (req, res) => {
 })
 
 app.use(express.json({limit:'50mb'}));
-app.use(cors());
+app.use(cors({credentials: true}));
 app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
