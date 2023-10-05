@@ -1,5 +1,5 @@
 import { json } from "express";
-import { db } from "../database/database.js";
+import { db } from "../Database/database.js";
 import jwt from "jsonwebtoken";
 
 export function getPostComments(req, res){

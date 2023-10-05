@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { db } from "../database/database.js";
+import { db } from "../Database/database.js";
 import bcrypt from "bcryptjs"
 
 export function register(req, res){
