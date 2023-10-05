@@ -34,6 +34,11 @@ app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
 
+
+app.get('/', (req, res) => {
+  res.send("HOLA");
+})
+
 app.listen(4000, () => {
     console.log("Conexión exitosa")
 })
