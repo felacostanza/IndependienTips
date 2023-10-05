@@ -47,7 +47,9 @@ export function login(req, res){
 
         res.cookie("token", token, {
             secure: true,
-            httpOnly: true
+            httpOnly: true,
+            sameSite:'none',
+            domain: '.netlify.app'
         }).status(200).json(otros);
     })
 
