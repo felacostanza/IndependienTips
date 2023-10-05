@@ -48,9 +48,11 @@ export function login(req, res){
         res.cookie("token", token, {
             secure: true,
             httpOnly: true,
-            sameSite:'none',
-            domain: 'https://independientips.netlify.app'
+            domain: 'https://independientips.netlify.app',
+            sameSite : lax
         }).status(200).json(otros);
+
+        res.json("INICIO SESION")
     })
 
 }
