@@ -22,7 +22,8 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            await login(values)
+            const res = await login(values);
+            console.log(res);
             navigate('/')
         } catch (err) {
             console.log(err);
