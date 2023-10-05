@@ -48,7 +48,7 @@ export function login(req, res){
         res.cookie("token", token, {
             secure: true,
             httpOnly: true,
-            sameSite : lax
+            sameSite : "lax"
         }).status(200).json(otros);
 
         res.json("INICIO SESION")
