@@ -49,7 +49,7 @@ export function login(req, res){
             secure: true,
             httpOnly: true,
             sameSite:'none',
-            domain: '.netlify.app'
+            domain: 'https://independientips.netlify.app'
         }).status(200).json(otros);
     })
 
